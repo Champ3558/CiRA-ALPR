@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>AI Barrier Dashboard</title>
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+</head>
+
+<body>
+    <!-- ==========================
+         HEADER
+    =========================== -->
+    <header class="topbar">
+        <div class="title">
+            <h1>AI Barrier Dashboard</h1>
+            <p>
+                Automatic License Plate Recognition System
+            </p>
+        </div>
+
+        <nav>
+            <a
+                href="index.html"
+                class="active">
+                Members
+            </a>
+            <a
+                href="logs.html">
+                Logs
+            </a>
+        </nav>
+
+    </header>
+    <!-- ==========================
+         MAIN
+    =========================== -->
+    <main class="container">
+        <!-- Toolbar -->
+        <section class="toolbar">
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="ค้นหาทะเบียน / จังหวัด / สมาชิก"
+                autocomplete="off">
+            <button id="addMemberBtn">
+                + Add Member
+            </button>
+
+        </section>
+        <!-- Member Table -->
+        <section class="table-card">
+            <table id="memberTable">
+                <thead>
+                    <tr>
+                        <th style="width:25%">
+                            Plate
+                        </th>
+                        <th style="width:25%">
+                            Province
+                        </th>
+                        <th style="width:30%">
+                            Member
+                        </th>
+                        <th style="width:20%">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="memberBody">
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- ==========================
+             MEMBER MODAL
+        =========================== -->
+
+        <div
+            id="memberModal"
+            class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">
+                        Add Member
+                    </h2>
+                    <button
+                        id="closeModalBtn"
+                        class="close-btn">
+                        ×
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    <input 
+                        type="hidden"
+                        id="editMode"
+                        value="add">
+                    <input
+                        type="hidden"
+                        id="oldPlate">
+
+                    <input
+                        type="hidden"
+                        id="oldProvince">
+
+                    <div class="form-group">
+                        <label for="plateInput">
+                            Plate
+                        </label>
+                        <input
+                            id="plateInput"
+                            type="text"
+                            placeholder="เช่น 9กท6903"
+                            autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="provinceInput">
+                            Province
+                        </label>
+                        <input
+                            id="provinceInput"
+                            type="text"
+                            placeholder="เช่น กรุงเทพมหานคร"
+                            autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="memberInput">
+                            Member
+                        </label>
+                        <input
+                            id="memberInput"
+                            type="text"
+                            placeholder="ชื่อสมาชิก"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button
+                        id="cancelBtn"
+                        class="btn-secondary">
+                        Cancel
+                    </button>
+                    <button
+                        id="saveBtn">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================
+             BACKGROUND OVERLAY
+        =========================== -->
+
+        <div
+            id="overlay"
+            class="overlay hidden">
+        </div>
+    </main>
+
+    <!-- ==========================
+         JAVASCRIPT
+    =========================== -->
+
+    <script src="js/config.js"></script>
+    <script src="js/members.js"></script>
+</body>
+</html>
